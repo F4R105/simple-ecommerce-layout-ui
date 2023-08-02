@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+input, button {
+    background-color: transparent;
+    border: none;
+    &:focus {outline: none;};
+}
+
+ul li {list-style: none;}
+a {text-decoration: none;}
+img {width: 100%;}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
+    // overflow: hidden;
+    background-color: #f1f1f1;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    max-width: 1280px;
+    background-color: #f1f1f1;
+}
+
+main header {
+    width: 100%;
+    height: 80px;
+    // background-color: blue;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+
+    #logo {
+        font-weight: bold; 
+        font-size: 2rem; 
+        color: gray;
+
+        span:first-child {font-family: 'Cookie', cursive;}
+        span:nth-child(2) {font-size: 1.5rem;}
+    }
+    nav {flex: 1; padding: 0 1em; display: flex; justify-content: end;}
+    nav ul {display: flex; gap: 1em;}
+    nav ul li a {text-transform: uppercase; color: gray;}
+
+    #account {
+        width: 50px;
+        height: 50px;
+        margin: 0 1em;
+        background-color: white;
+        border-radius: 50%;
+    }
+}
+
+aside {
+    padding: .5em 0;
+
+    #aside-wrapper {
+        height: 100%;
+        background-color: white;
+        border-radius: 5px;
+        padding: 1em;
+    }
+
+    #aside-header {
+        height: 10%;
+        h3 {text-align: center; color: gray; padding: .3em 0;}
+        p {text-align: center; font-size: .9rem; color: gray; padding-bottom: .5em; border-bottom: 1px solid rgb(219, 219, 219);}
+    }
+
+    #cart-products {
+        display: flex;
+        flex-direction: column;
+        gap: .5em;
+        padding: .2em;
+        height: 60%;
+        overflow-y: scroll;
+
+        .product {
+            flex-shrink: 0; 
+            height: 70px; 
+            border-radius: 5px; 
+            background-color: #f1f1f1;
+            overflow: hidden;
+
+            display: flex;
+            
+            .product-wrapper {
+                flex: 1;
+                display: flex;
+                align-items: center;
+                gap: .5em;
+
+                .product-image {width: 30%; height: 100%; background-color: var(--image-bg);}
+                .product-description {flex: 1; display: flex;flex-direction: column; justify-content: center;}
+                .product-name {font-size: .8rem; color: gray;}
+                .product-price {font-size: .9rem;  color: gray; font-weight: bold;}
+                .product-amount { 
+                    padding: 0 1em;
+                    display: flex;
+                    align-items: center;
+                    gap: .3em;
+                    
+                    svg {font-size: 1.3rem; fill: var(--button-bg); cursor: pointer;}
+                    svg:hover { fill: var(--button-bg-hover)}
+                }
+            }
+
+            & > button {
+                padding: .5em;
+                background-color: var(--button-bg);
+                cursor: pointer;
+                &:hover {background-color: rgb(245, 115, 115);}
+                svg {fill: white;}
+            }
+
+            &:hover {outline: 1px solid gray;}
+        }
+        
+    }
+
+    table#calculations {
+        width: 100%;
+        height: 20%;
+        padding: 1em 0;
+
+        td:last-child {text-align: right;}
+        tr {height: 25px;}
+    }
+    
+    #checkout {
+        height: 10%;
+        // background-color: green;
+
+        button {
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: var(--button-bg);
+
+            font-size: 1.2rem;
+            color: white;
+            text-transform: uppercase;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1em;
+
+            svg {fill: white;}
+            &:hover {background-color: var(--button-bg-hover);}
+        }
+    }
+
+    @media screen and (max-width: 1080px) {
+        display: none;
+    }
+}
